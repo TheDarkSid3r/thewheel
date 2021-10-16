@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #3457a3;
+}
+
+@font-face {
+    font-family: "WheelFont";
+    src: url(font.ttf);
+}
+
+* {
+    line-height: 100%;
+    box-sizing: border-box;
+    font-family: "WheelFont", serif;
+}
+
+.wrapper {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: url(images/backfull.png) center/cover;
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/backclouds.png) no-repeat bottom/100%;
+    z-index: 2;
+}
+
+.rays {
+    position: absolute;
+    width: 1536px;
+    height: 1536px;
+    left: 50%;
+    bottom: -500px;
+    transform: translateX(-50%);
+    opacity: 0.3;
+}
+
+.ray {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 768px;
+    width: 768px;
+    transform-origin: bottom right;
+    background: url(images/rays.png) no-repeat bottom right/contain;
+}
+
+.wheels {
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    z-index: 3;
+    left: 50%;
+    bottom: -58px;
+    transform: translateX(-50%);
+}
+
+.wheels>.wheel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(images/base.png) no-repeat center/contain;
+}
+
+.wheels>.wheel>.slices {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.wheels>.wheel>.slices>.slice {
+    position: absolute;
+    top: 0;
+    left: 218px;
+    width: 76px;
+    height: 256px;
+    transform-origin: bottom;
+}
+
+.wheels>.wheel>.slices>.slice>.image {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wheels>.ticker {
+    position: absolute;
+    top: -50px;
+    left: 181px;
+    transform: rotate(-90deg);
+    width: 100px;
+    height: 50px;
+    background: url(images/ticker.png) no-repeat center/contain;
+    z-index: 2;
+    transform-origin: 75% center;
+}
+
+.wheels>.face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 176px;
+    height: 176px;
+    background: url(images/face.png) no-repeat center/contain;
+    z-index: 2;
+}
+
+.question {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 165px;
+    background: url(images/question.png) no-repeat center/contain;
+    z-index: 5;
+    padding: 40px 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.question>.text, .question>.form>.input {
+    text-align: center;
+    width: 100%;
+    color: #262a66;
+    font-size: 30px;
+    text-overflow: ellipsis;
+}
+
+.question>.text {
+    display: none;
+}
+
+.question>.form {
+    width: 100%;
+}
+
+.question>.form>.input {
+    border: 0;
+    background: none;
+    outline: 0;
+    padding: 0;
+}
+
+.question>.form>.input::placeholder {
+    color: #262a66;
+    opacity: 0.7;
+}
+
+.question.inputted>.text {
+    display: block;
+}
+
+.question.inputted>.form {
+    display: none;
+}
+
+.question>.submit {
+    position: absolute;
+    bottom: -10px;
+    right: 40px;
+    width: 200px;
+    padding: 10px 0;
+    background: url(images/button.svg) no-repeat center/contain;
+    color: #593206;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+
+.answers {
+    position: absolute;
+    top: 30%;
+    width: 700px;
+    height: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 3;
+    padding: 0 25px;
+}
+
+.answers>.answer {
+    text-align: center;
+    font-size: 60px;
+}
